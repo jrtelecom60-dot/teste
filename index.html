@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Dia do Cliente | JR Telecom</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/globals.css" />
+
+    <!-- Tailwind CSS cdn -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Configurações do Tailwind CSS
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              background: "#F6F8FB",
+              "jrtelecom-blue": "#0003E1",
+            },
+            keyframes: {
+              float: {
+                "0%, 100%": { transform: "translateY(0) scale(1)" },
+                "50%": { transform: "translateY(-20px) scale(1.05)" },
+              },
+              floatReverse: {
+                "0%, 100%": { transform: "translateY(0) scale(1)" },
+                "50%": { transform: "translateY(20px) scale(0.95)" },
+              },
+              spin: {
+                "0%": { transform: "rotate(0deg)" },
+                "100%": { transform: "rotate(360deg)" },
+              },
+              fadeIn: {
+                "0%": { opacity: "0", transform: "translateY(10px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+              shimmer: {
+                "0%": { backgroundPosition: "-1000px 0" },
+                "100%": { backgroundPosition: "1000px 0" },
+              },
+              scaleIn: {
+                "0%": { transform: "scale(0.9)", opacity: "0" },
+                "100%": { transform: "scale(1)", opacity: "1" },
+              },
+              slideUp: {
+                "0%": { transform: "translateY(20px)", opacity: "0" },
+                "100%": { transform: "translateY(0)", opacity: "1" },
+              },
+              pulse3D: {
+                "0%, 100%": { transform: "scale3d(1, 1, 1)" },
+                "50%": { transform: "scale3d(1.05, 1.05, 1.05)" },
+              },
+            },
+            animation: {
+              "float-slow": "float 8s ease-in-out infinite",
+              "float-reverse": "floatReverse 7s ease-in-out infinite",
+              "spin-slow": "spin 15s linear infinite",
+              "fade-in": "fadeIn 0.5s ease-out forwards",
+              shimmer: "shimmer 2.5s infinite linear",
+              "scale-in": "scaleIn 0.5s ease-out forwards",
+              "slide-up": "slideUp 0.6s ease-out forwards",
+              "pulse-3d": "pulse3D 2s ease-in-out infinite",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-background min-h-[400dvh] text-gray-900">
+    <div class="flex h-3 sticky top-0 z-20">
+      <div class="flex-1 bg-white"></div>
+      <div class="flex-1 bg-cyan-400"></div>
+      <div class="flex-1 bg-orange-500"></div>
+    </div>
+
+    <div
+      class="flex fixed top-3 left-0 w-full min-h-11 justify-center py-5 backdrop-blur-md z-20"
+    >
+      <img
+        src="assets/images/logo-white.svg"
+        alt="JR Telecom"
+        class="w-auto h-11"
+        loading="lazy"
+      />
+    </div>
+
+    <div
+      class="loading fixed inset-0 z-50 bg-gradient-to-br from-blue-600 via-jrtelecom-blue to-blue-900 flex flex-col items-center justify-center"
+    >
+      <!-- Container principal com animação suave -->
+      <div class="flex flex-col items-center gap-6">
+        <!-- Logo com animação simples -->
+        <img
+          src="assets/images/jrtelecom-gif.gif"
+          alt="JR Telecom"
+          class="w-32 h-auto animate-scale-in"
+          loading="lazy"
+        />
+
+        <!-- Spinner minimalista -->
+        <div class="w-10 h-10 border-3 border-white/20 border-t-white rounded-full animate-spin"></div>
+      </div>
+    </div>
+
+    <style>
+      .border-3 {
+        border-width: 3px;
+      }
+    </style>
+
+    <div
+      class="w-full flex items-center justify-center flex-col relative px-6 pt-24"
+    >
+      <div class="absolute top-0 left-0 w-full h-screen md:h-[700px] -z-10 overflow-hidden">
+        <!-- Fundo principal com gradiente -->
+        <div
+          class="absolute inset-0 bg-gradient-to-br from-blue-600 via-jrtelecom-blue to-blue-900 animate-pulse-3d"
+        ></div>
+
+        <!-- Overlay com efeito de brilho e blur -->
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-transparent via-blue-400/5 to-transparent backdrop-blur-sm animate-shimmer bg-[length:200%_100%] bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 transition-opacity duration-1000"
+        ></div>
+      </div>
+
+      <div
+        class="text-center mt-5 px-4 opacity-0 transition-all duration-1000 translate-y-4"
+        id="content-container"
+      >
+        <h1 class="flex flex-col gap-6 items-center">
+          <div class="relative w-full flex flex-col items-center gap-2">
+            <!-- Efeito de brilho -->
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-yellow-500/20 via-blue-500/20 to-purple-500/20 blur-3xl opacity-0 transition-opacity duration-1000"
+            ></div>
+
+            <!-- Feliz -->
+            <div
+              class="relative opacity-0 transition-all duration-1000 translate-y-4"
+              style="transition-delay: 300ms"
+            >
+              <span
+                class="text-3xl sm:text-4xl font-light tracking-wider text-blue-200 animate-float-slow"
+              >
+                Feliz
+              </span>
+            </div>
+
+            <!-- Dia do Cliente -->
+            <div
+              class="relative opacity-0 transition-all duration-1000 translate-y-4"
+              style="transition-delay: 600ms"
+            >
+              <span
+                class="absolute -inset-x-4 -inset-y-2 bg-gradient-to-r from-blue-600/30 to-purple-600/30 blur-xl animate-pulse"
+              ></span>
+              <span
+                class="relative text-4xl sm:text-5xl md:text-6xl font-bold uppercase bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-white animate-shimmer bg-[length:200%_auto]"
+              >
+                Dia do Cliente
+              </span>
+            </div>
+          </div>
+
+          <!-- Linha decorativa -->
+          <div
+            class="flex items-center gap-3 w-full max-w-xs mx-auto opacity-0 transition-all duration-1000 translate-y-4"
+            style="transition-delay: 900ms"
+          >
+            <div
+              class="flex-1 h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent"
+            ></div>
+            <span
+              class="text-lg sm:text-xl text-blue-200 font-light tracking-wider whitespace-nowrap animate-pulse-3d"
+            >
+              15 de Setembro
+            </span>
+            <div
+              class="flex-1 h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent"
+            ></div>
+          </div>
+        </h1>
+
+        <!-- Estrelas e decorações -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+          <div class="stars-container relative w-full h-full">
+            <!-- Estrelas maiores e mais brilhantes -->
+            <div
+              class="star absolute w-2 h-2 bg-yellow-300 rounded-full animate-twinkle"
+              style="top: 15%; left: 10%"
+            ></div>
+            <div
+              class="star absolute w-3 h-3 bg-blue-300 rounded-full animate-twinkle"
+              style="top: 25%; right: 15%"
+            ></div>
+            <div
+              class="star absolute w-2.5 h-2.5 bg-cyan-300 rounded-full animate-twinkle"
+              style="top: 35%; right: 25%"
+            ></div>
+
+            <!-- Novas estrelas com efeitos diferentes -->
+            <div
+              class="star absolute w-1.5 h-1.5 bg-white rounded-full animate-twinkle"
+              style="top: 55%; left: 30%; --delay: 4s"
+            ></div>
+            <div
+              class="star absolute w-1 h-1 bg-blue-200 rounded-full animate-twinkle"
+              style="top: 75%; left: 40%; --delay: 6s"
+            ></div>
+            <div
+              class="star absolute w-1.5 h-1.5 bg-purple-200 rounded-full animate-twinkle"
+              style="top: 85%; right: 45%; --delay: 7s"
+            ></div>
+          </div>
+        </div>
+
+        <p
+          class="mt-8 sm:mt-10 text-xl sm:text-2xl text-blue-100 font-light max-w-2xl mx-auto leading-relaxed px-4 opacity-0 transition-all duration-1000 translate-y-4"
+          style="transition-delay: 1200ms"
+        >
+          <span
+            class="block transform hover:scale-105 transition-all duration-500 hover:text-white relative touch-pan-x"
+          >
+            <span
+              class="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-500 blur-lg opacity-20"
+            ></span>
+            Você é a razão do nosso sucesso! Hoje é o seu dia e queremos
+            celebrar com você!
+          </span>
+        </p>
+
+        <!-- Botões com layout adaptativo para mobile -->
+        <div
+          class="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-4 items-center justify-center opacity-0 transition-all duration-1000 translate-y-4"
+          style="transition-delay: 1500ms"
+        >
+          <!-- Botão de Assistir -->
+          <button
+            onclick="document.querySelector('iframe').scrollIntoView({behavior: 'smooth'})"
+            class="w-full sm:w-auto group bg-gradient-to-r from-white to-blue-50 hover:from-blue-50 hover:to-white text-jrtelecom-blue px-8 py-4 rounded-2xl font-medium flex items-center justify-center gap-3 transform hover:-translate-y-0.5 transition-all duration-200 shadow-lg hover:shadow-xl"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              class="w-6 h-6 transition-transform duration-200 group-hover:translate-x-0.5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347c-.75.412-1.667-.13-1.667-.986V5.653Z"
+              />
+            </svg>
+            <span class="whitespace-nowrap">Assistir Vídeo</span>
+          </button>
+        </div>
+      </div>
+
+      <style>
+        @keyframes twinkle {
+          0%,
+          100% {
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+            filter: blur(0px);
+          }
+          50% {
+            opacity: 0.4;
+            transform: scale(0.5) rotate(180deg);
+            filter: blur(1px);
+          }
+        }
+
+        .animate-twinkle {
+          animation: twinkle 4s ease-in-out infinite;
+          animation-delay: var(--delay, 0s);
+          box-shadow: 0 0 10px currentColor;
+        }
+
+        .star {
+          transition: all 0.3s ease;
+        }
+
+        .star:hover {
+          transform: scale(2);
+          opacity: 0.8;
+        }
+
+        .stars-container .star:nth-child(1) {
+          --delay: 0s;
+        }
+        .stars-container .star:nth-child(2) {
+          --delay: 1s;
+        }
+        .stars-container .star:nth-child(3) {
+          --delay: 2s;
+        }
+        .stars-container .star:nth-child(4) {
+          --delay: 3s;
+        }
+
+        /* Melhorias para touch em dispositivos móveis */
+        @media (max-width: 640px) {
+          .touch-pan-x {
+            touch-action: pan-x;
+          }
+
+          button {
+            -webkit-tap-highlight-color: transparent;
+          }
+
+          button:active {
+            transform: scale(0.95);
+          }
+        }
+      </style>
+
+      <script>
+        // Função para compartilhamento otimizada para mobile
+        function shareContent() {
+          const shareData = {
+            title: "Dia do Cliente JR Telecom",
+            text: "Celebre conosco o Dia do Cliente! Uma mensagem especial para você. 🎉",
+            url: window.location.href,
+          };
+
+          if (navigator.share) {
+            navigator
+              .share(shareData)
+              .catch((error) => console.log("Erro ao compartilhar:", error));
+          } else {
+            // Fallback com feedback visual melhorado
+            navigator.clipboard
+              .writeText(window.location.href)
+              .then(() => {
+                const msg = document.createElement("div");
+                msg.className =
+                  "fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-white text-jrtelecom-blue px-6 py-3 rounded-xl shadow-lg";
+                msg.textContent = "Link copiado! 📋";
+                document.body.appendChild(msg);
+                setTimeout(() => msg.remove(), 2000);
+              })
+              .catch(() => alert("Não foi possível copiar o link."));
+          }
+        }
+      </script>
+
+      <iframe
+        src="https://www.youtube.com/embed/SQg_ulx47B0"
+        loading="lazy"
+        class="w-full max-w-sm max-lg:aspect-[9/16] lg:max-w-3xl lg:h-96 rounded-3xl mt-6 ring-[6px] ring-jrtelecom-blue bg-blue-700"
+      ></iframe>
+    </div>
+
+    <div class=""></div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const loading = document.querySelector(".loading");
+        if (loading) {
+          setTimeout(() => {
+            loading.style.transition = "opacity 0.5s ease";
+            loading.style.opacity = "0";
+
+            setTimeout(() => {
+              loading.remove();
+
+              // Inicia as animações do conteúdo
+              const overlay = document.querySelector(".bg-gradient-to-t");
+              const contentContainer = document.querySelector("#content-container");
+
+              if (overlay) overlay.style.opacity = "1";
+
+              if (contentContainer) {
+                contentContainer.style.opacity = "1";
+                contentContainer.style.transform = "translateY(0)";
+
+                // Anima todos os elementos com transição
+                const animatedElements = contentContainer.querySelectorAll(
+                  '[style*="transition-delay"]'
+                );
+                animatedElements.forEach((element) => {
+                  element.style.opacity = "1";
+                  element.style.transform = "translateY(0)";
+                });
+              }
+            }, 500);
+          }, 2500);
+        }
+      });
+    </script>
+  </body>
+</html>
