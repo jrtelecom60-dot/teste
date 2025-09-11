@@ -9,10 +9,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/globals.css" />
 
-    <!-- Canvas Confetti -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-
-    <!-- Tailwind CSS cdn -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       // Configurações do Tailwind CSS
@@ -72,43 +69,6 @@
       };
     </script>
     <style>
-      /* Efeitos de Bolhas */
-      .bubble {
-        position: absolute;
-        border-radius: 50%;
-        background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.05));
-        box-shadow: 0 0 10px rgba(255, 255, 255, 0.2), inset 0 0 20px rgba(255, 255, 255, 0.2);
-        animation: float-bubble 8s ease-in-out infinite;
-        pointer-events: none;
-        opacity: 0.3;
-      }
-
-      .bubble::after {
-        content: '';
-        position: absolute;
-        top: 20%;
-        left: 20%;
-        width: 20%;
-        height: 20%;
-        background: rgba(255, 255, 255, 0.4);
-        border-radius: 50%;
-      }
-
-      @keyframes float-bubble {
-        0%, 100% {
-          transform: translate(0, 0) scale(1);
-        }
-        25% {
-          transform: translate(10px, -15px) scale(1.02);
-        }
-        50% {
-          transform: translate(-5px, -25px) scale(0.98);
-        }
-        75% {
-          transform: translate(-15px, -10px) scale(1.02);
-        }
-      }
-
       /* Efeito de Brilho Pulsante */
       .shine-effect {
         position: absolute;
@@ -116,13 +76,19 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+        background: linear-gradient(
+          45deg,
+          transparent,
+          rgba(255, 255, 255, 0.1),
+          transparent
+        );
         animation: shine 3s ease-in-out infinite;
         pointer-events: none;
       }
 
       @keyframes shine {
-        0%, 100% {
+        0%,
+        100% {
           opacity: 0.3;
           transform: translateX(-100%) translateY(-100%) rotate(45deg);
         }
@@ -133,15 +99,12 @@
       }
     </style>
   </head>
-  <body class="bg-background min-h-[400dvh] text-gray-900">
+  <body class="bg-background text-gray-900">
     <div class="flex h-3 sticky top-0 z-20">
       <div class="flex-1 bg-blue-500"></div>
       <div class="flex-1 bg-cyan-400"></div>
       <div class="flex-1 bg-orange-500"></div>
     </div>
-
-    <!-- Efeitos de Bolhas -->
-    <div id="bubbles-container" class="fixed inset-0 pointer-events-none -z-10"></div>
 
     <div
       class="flex fixed top-3 left-0 w-full min-h-11 justify-center py-5 backdrop-blur-md z-20"
@@ -168,7 +131,9 @@
         />
 
         <!-- Spinner minimalista -->
-        <div class="w-10 h-10 border-3 border-white/20 border-t-white rounded-full animate-spin"></div>
+        <div
+          class="w-10 h-10 border-3 border-white/20 border-t-white rounded-full animate-spin"
+        ></div>
       </div>
     </div>
 
@@ -181,7 +146,9 @@
     <div
       class="w-full flex items-center justify-center flex-col relative px-6 pt-24"
     >
-      <div class="absolute top-0 left-0 w-full h-screen md:h-[700px] -z-10 overflow-hidden">
+      <div
+        class="absolute top-0 left-0 w-full h-screen md:h-[700px] -z-10 overflow-hidden"
+      >
         <!-- Fundo principal com gradiente -->
         <div
           class="absolute inset-0 bg-gradient-to-br from-zinc-50 via-zinc-100 to-zinc-200 animate-pulse-3d"
@@ -420,44 +387,71 @@
       <iframe
         src="https://www.youtube.com/embed/SQg_ulx47B0"
         loading="lazy"
-        class="w-full max-w-sm max-lg:aspect-[9/16] lg:max-w-3xl lg:h-96 rounded-3xl mt-6 ring-[6px] ring-jrtelecom-blue bg-blue-700"
+        class="w-full max-w-sm max-lg:aspect-[9/16] lg:max-w-3xl lg:h-96 rounded-3xl mt-6 ring-[3px] ring-jrtelecom-blue bg-blue-700"
       ></iframe>
     </div>
 
-    <div class=""></div>
+    <div class="text-center mt-20 max-w-3xl mx-auto px-4">
+      <span
+        class="text-3xl sm:text-4xl font-light tracking-wider text-zinc-700 animate-float-slow max-w-sm mx-auto"
+      >
+        O que <span class="font-medium">nossos clientes</span> pensam de nós?
+      </span>
+
+      <p class="text-zinc-700 text-sm mt-2">
+        A satisfação dos nossos clientes é a nossa maior recompensa.
+      </p>
+
+      <!-- Avaliações de clientes -->
+      <div class="grid sm:grid-cols-2 gap-2 mt-10">
+        <div class="bg-white rounded-2xl p-4">
+          <p class="text-zinc-700 italic">
+            "A JR Telecom é uma empresa que entende do que é ser cliente. Sempre
+            que tivemos algum problema, eles resolveram de forma rápida e
+            eficiente. Recomendo!"
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-4">
+          <p class="text-zinc-700 italic">
+            "Não tenho palavras para descrever a excelência do atendimento da JR Telecom. Eles superaram todas as minhas expectativas, proporcionando uma experiência de telecomunicações excepcional."
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <footer class="bg-white rounded-2xl p-6 mt-10 border-t border-zinc-200">
+      <div class="flex items-center justify-center flex-col gap-4">
+        <img
+          src="assets/images/logo-white.svg"
+          alt="JR Telecom"
+          class="w-auto h-10"
+        />
+
+        <!-- Todos os direitos reservados -->
+        <div class="flex items-center justify-center">
+          <p class="text-zinc-700 text-sm">
+            <span class="font-medium">Copyright © JR Telecom</span> - Todos os
+            direitos reservados.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <div class="flex h-1 sticky top-0 z-20">
+      <div class="flex-1 bg-blue-500"></div>
+      <div class="flex-1 bg-cyan-400"></div>
+      <div class="flex-1 bg-orange-500"></div>
+    </div>
 
     <script>
-      // Função para criar bolhas
-      function createBubbles() {
-        const container = document.getElementById('bubbles-container');
-        const bubbleCount = 15;
-
-        for (let i = 0; i < bubbleCount; i++) {
-          const bubble = document.createElement('div');
-          bubble.className = 'bubble';
-          
-          // Tamanho aleatório
-          const size = Math.random() * 60 + 20;
-          bubble.style.width = `${size}px`;
-          bubble.style.height = `${size}px`;
-          
-          // Posição aleatória
-          bubble.style.left = `${Math.random() * 100}%`;
-          bubble.style.top = `${Math.random() * 100}%`;
-          
-          // Atraso na animação
-          bubble.style.animationDelay = `${Math.random() * 5}s`;
-          
-          container.appendChild(bubble);
-        }
-      }
-
       // Função para disparar confetes
       function fireConfetti() {
-        const end = Date.now() + 3000; // 3 segundos de duração
+        const end = Date.now() + 500; // 3 segundos de duração
 
         // Cores personalizadas
-        const colors = ['#0003E1', '#4169E1', '#1E90FF', '#87CEEB', '#F8F9FA'];
+        const colors = ["#00034A", "#4169A1", "#CDCDCD", "#87CEEB", "#F8F9FA"];
 
         (function frame() {
           confetti({
@@ -465,21 +459,21 @@
             angle: 60,
             spread: 55,
             origin: { x: 0 },
-            colors: colors
+            colors: colors,
           });
-          
+
           confetti({
             particleCount: 3,
             angle: 120,
             spread: 55,
             origin: { x: 1 },
-            colors: colors
+            colors: colors,
           });
 
           if (Date.now() < end) {
             requestAnimationFrame(frame);
           }
-        }());
+        })();
 
         // Confete no centro
         setTimeout(() => {
@@ -487,7 +481,7 @@
             particleCount: 100,
             spread: 70,
             origin: { y: 0.6 },
-            colors: colors
+            colors: colors,
           });
         }, 500);
       }
@@ -504,7 +498,8 @@
 
               // Inicia as animações do conteúdo
               const overlay = document.querySelector(".bg-gradient-to-t");
-              const contentContainer = document.querySelector("#content-container");
+              const contentContainer =
+                document.querySelector("#content-container");
 
               if (overlay) overlay.style.opacity = "1";
 
@@ -522,11 +517,10 @@
                 });
 
                 // Dispara os efeitos especiais
-                createBubbles();
-                setTimeout(fireConfetti, 1000);
+                fireConfetti();
               }
             }, 500);
-          }, 2500);
+          }, 0);
         }
       });
     </script>
